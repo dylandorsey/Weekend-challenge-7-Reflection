@@ -1,6 +1,8 @@
 # Redux Feedback Loop
 
-> **PLEASE COMMENT YOUR CODE.** Do not clone this repository. Instead, download the zip, extract the contents, `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
+> **PLEASE COMMENT YOUR CODE.** Do not clone this repository. 
+
+[x] Instead, download the zip, extract the contents, `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
 
 "And as always, what do I end every day with?" - Luke
 
@@ -9,14 +11,14 @@
 
 ### SETUP
 
-Create your database and tables using the provided `data.sql` file. Start the server.
+[x] Create your database and tables using the provided `data.sql` file. Start the server.
 
 ```
 npm install
 npm run server
 ```
 
-Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
+[x] Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
 
 ```
 npm run client
@@ -25,6 +27,27 @@ npm run client
 ### ADD NEW FEEDBACK
 
 > NOTE: As a baseline requirement, you must use Redux to store your data across views.
+
+[x] install node modules: body-parser, react, react redux, react-router-dom, redux, redux-logger
+[x] import redux-logger
+[x] set up provider and redux store
+[x] set up input reducers: feeling, understanding, support, and comments
+[ ] set up client side routing
+[ ] feeling: prompt
+[ ] feeling: input
+[ ] feeling: form validation
+[ ] feeling: connect to redux store
+[ ] feeling: next button functionality
+[ ] feeling: previous button functionality
+[ ] submit view: submit button runs POST to database
+[ ] submit success toast or page
+[ ] admin: html setup
+[ ] set up adminReducer
+[ ] admin: GET function
+[ ] admin: DELETE function
+[ ] admin: DELETE confirmation
+[ ] progress bar
+[ ] 
 
 Create a multi-part form that allows users to leave feedback for today. 
 There will be 4 views for the form parts.
