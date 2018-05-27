@@ -30,7 +30,6 @@ class Feeling extends Component {
     
     // assign input value to state property
     handleChangeFor = propertyName => event => {
-        console.log('input says: ', event.target.value);
         this.setState({
             [propertyName] : event.target.value
         });
@@ -38,14 +37,10 @@ class Feeling extends Component {
 
     // store state and advance to next page
     submitHandler = (event) => {
-        console.log('init submitHandler')
         event.preventDefault();
         this.dispatchInput();
-        console.log('dispatched action');
-    
+        this.props.history.push('/understanding');
     }
-
-
 
     render() {
         return (
