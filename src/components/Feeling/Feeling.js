@@ -5,7 +5,7 @@ const mapReduxStateToProps = (reduxState) => (
     { reduxState }
 );
 
-const emptyInput = '';
+const emptyInput = 'Type 1 through 5';
 
 
 class Feeling extends Component {
@@ -16,13 +16,27 @@ class Feeling extends Component {
         }
     }
 
+    componentDidMount = () => {
+        this.setState({
+            formInput: this.props.reduxState.feelingReducer.value,
+        })
+    }
+
+    // send state to store
+    dispatchInput = () => {
+        const action = {type: 'STORE_FEELING', payload: this.state.formInput};
+        this.props.dispatch(action);
+    }
+    
+    // assign input value to state property
     handleChangeFor = propertyName => event => {
         console.log('input says: ', event.target.value);
         this.setState({
             [propertyName] : event.target.value
         });
     }
-    
+
+    // store state and advance to next page
     submitHandler = (event) => {
         console.log('init submitHandler')
         event.preventDefault();
@@ -31,10 +45,7 @@ class Feeling extends Component {
     
     }
 
-    dispatchInput = () => {
-        const action = {type: 'STORE_FEELING', payload: this.state};
-        this.props.dispatch(action);
-    }
+
 
     render() {
         return (
@@ -48,7 +59,7 @@ class Feeling extends Component {
                 </div>
                 <h2>How are you feeling today?</h2>
                 <form>
-                    <input onChange={this.handleChangeFor('formInput')} type="number" placeholder="Type 1 through 5" />
+                    <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
                     <input type="submit" value="Next" onClick={this.submitHandler}/>
                 </form>
             </div>

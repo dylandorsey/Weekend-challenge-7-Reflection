@@ -40,8 +40,7 @@ npm run client
 [x] feeling: input
 [ ] feeling: form validation
 [x] feeling: connect to redux store
-[ ] feeling: next button functionality
-[ ] feeling: previous button functionality
+[x] feeling: next button functionality
 [ ] understanding: prompt
 [ ] understanding: input
 [ ] understanding: form validation
