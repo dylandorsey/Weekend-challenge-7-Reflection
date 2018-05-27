@@ -12,7 +12,7 @@ const feelingReducer = (
     state = { value: null },
     action
 ) => {
-    if (action.type = "STORE_FEELING") {
+    if (action.type === "STORE_FEELING") {
         state = { value: action.payload };
     }
     return state;
@@ -24,7 +24,7 @@ const understandingReducer = (
     state = { value: null },
     action
 ) => {
-    if (action.type = "STORE_UNDERSTANDING") {
+    if (action.type === "STORE_UNDERSTANDING") {
         state = { value: action.payload };
     }
     return state;
@@ -36,7 +36,7 @@ const supportReducer = (
     state = { value: null },
     action
 ) => {
-    if (action.type = "STORE_SUPPORT") {
+    if (action.type === "STORE_SUPPORT") {
         state = { value: action.payload };
     }
     return state;
@@ -48,7 +48,7 @@ const commentsReducer = (
     state = { value: null },
     action
 ) => {
-    if (action.type = "STORE_COMMENTS") {
+    if (action.type === "STORE_COMMENTS") {
         state = { value: action.payload };
     }
     return state;

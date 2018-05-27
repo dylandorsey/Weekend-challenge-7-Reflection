@@ -32,13 +32,34 @@ npm run client
 [x] import redux-logger
 [x] set up provider and redux store
 [x] set up input reducers: feeling, understanding, support, and comments
-[ ] set up client side routing
-[ ] feeling: prompt
-[ ] feeling: input
+[x] create component files for feeling, understanding, support, comments, admin
+[x] set up client side routing
+[x] test client routes
+[x] connect app
+[x] feeling: prompt
+[x] feeling: input
 [ ] feeling: form validation
-[ ] feeling: connect to redux store
+[x] feeling: connect to redux store
 [ ] feeling: next button functionality
 [ ] feeling: previous button functionality
+[ ] understanding: prompt
+[ ] understanding: input
+[ ] understanding: form validation
+[ ] understanding: connect to redux store
+[ ] understanding: next button functionality
+[ ] understanding: previous button functionality
+[ ] support: prompt
+[ ] support: input
+[ ] support: form validation
+[ ] support: connect to redux store
+[ ] support: next button functionality
+[ ] support: previous button functionality
+[ ] comments: prompt
+[ ] comments: input
+[ ] comments: form validation
+[ ] comments: connect to redux store
+[ ] comments: next button functionality
+[ ] comments: previous button functionality
 [ ] submit view: submit button runs POST to database
 [ ] submit success toast or page
 [ ] admin: html setup
