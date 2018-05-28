@@ -20,6 +20,20 @@ router.get('/', (req, res) => {
 // end GET feedback
 
 // DELETE feedback
+router.delete('/:id', (req, res) => {
+    const feedback_id = req.params;
+    console.log(feedback_id);
+    pool.query(`DELETE FROM "feedback"
+                        WHERE "id" = ($1);`, [feedback_id])
+        .then((results) => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('problem with DELETE from database', error);
+            res.sendStatus(500);
+        });
+});
+// end DELETE route
 
 // end DELETE feedback
 

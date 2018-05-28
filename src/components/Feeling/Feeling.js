@@ -54,10 +54,10 @@ class Feeling extends Component {
                     </div>
                 </div>
                 <h2>How are you feeling today?</h2>
-                <form>
+                <form onSubmit={this.submitHandler}>
                     <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
-                    <input type="submit" value="Next" onClick={this.submitHandler}/>
                 </form>
+                <button onClick={this.submitHandler}>Next</button>
             </div>
         );
     }

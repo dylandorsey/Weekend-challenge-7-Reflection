@@ -59,15 +59,14 @@ npm run client
 [x] comments: connect to redux store
 [x] comments: next button functionality
 [ ] comments: previous button functionality
-[ ] submit view: submit button runs POST to database
+[x] submit view: submit button runs POST to database
 [x] success page
-[ ] admin: html setup
-[ ] set up adminReducer
-[ ] admin: GET function
+[x] admin: html setup
+[x] set up adminReducer
+[x] admin: GET function
 [ ] admin: DELETE function
 [ ] admin: DELETE confirmation
 [ ] progress bar
-[ ] 
 
 Create a multi-part form that allows users to leave feedback for today. 
 There will be 4 views for the form parts.

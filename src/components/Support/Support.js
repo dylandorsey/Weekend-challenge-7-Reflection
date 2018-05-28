@@ -36,6 +36,12 @@ class Support extends Component {
         });
     }
 
+    // handle navigation to previous page
+    previousHandler = () => {
+        this.dispatchInput();
+        this.props.history.push('/understanding')
+    }
+
     // store state and advance to next page
     submitHandler = (event) => {
         event.preventDefault();
@@ -54,10 +60,11 @@ class Support extends Component {
                     </div>
                 </div>
                 <h2>How well are you being supported?</h2>
-                <form>
+                <form onSubmit={this.submitHandler}>
                     <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
-                    <input type="submit" value="Next" onClick={this.submitHandler}/>
                 </form>
+                <button onClick={this.previousHandler} >Previous</button>
+                <button onClick={this.submitHandler}>Next</button>
             </div>
         );
     }

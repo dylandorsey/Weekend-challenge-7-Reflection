@@ -20,7 +20,6 @@ class Comments extends Component {
         super(props);
         this.state = {
             formInput: emptyInput,
-            feedback: emptyObject,
         }
     }
 
@@ -31,25 +30,16 @@ class Comments extends Component {
         })
     }
 
-    // assemble stored user inputs into a feedback object for later submission to server
-    createFeedbackObject = () => {
-        console.log('init createFeedbackObject');
-        console.log('feedback object: ', this.state.feedback);
-
-    }
-
     // send state to store
     dispatchInput = () => {
         const action = { type: 'STORE_INPUT', property: 'comments', payload: this.state.formInput };
         this.props.dispatch(action);
-
     }
 
     // initiate submit feedback to server via submissionReducer
     dispatchSubmitFeedback = () => {
         const action = { type: 'SUBMIT_FEEDBACK'};
         this.props.dispatch(action);
-
     }
 
     // assign input value to state property
@@ -59,12 +49,18 @@ class Comments extends Component {
         });
     }
 
-    // store state and advance to next page
+    // handle navigation to previous page
+    previousHandler = () => {
+        this.dispatchInput();
+        this.props.history.push('/support')
+    }
+
+    // store input and initiate POST to database
     submitHandler = (event) => {
         event.preventDefault();
         // store state
         this.dispatchInput();
-        // submit feedback to server
+        // initiate POST to database
         this.dispatchSubmitFeedback();
     }
 
@@ -79,10 +75,12 @@ class Comments extends Component {
                     </div>
                 </div>
                 <h2>Any comments you want to leave?</h2>
-                <form>
+                <form onSubmit={this.submitHandler}>
                     <input onChange={this.handleChangeFor('formInput')} type="text" placeholder={this.state.formInput} />
-                    <input type="submit" value="Submit Feedback" onClick={this.submitHandler} />
                 </form>
+                <br/>
+                <button onClick={this.previousHandler} >Previous</button>
+                <button onClick={this.submitHandler}>Submit Feedback</button>
             </div>
         );
     }

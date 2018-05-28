@@ -20,19 +20,31 @@ class Admin extends Component {
             method: 'GET',
             url: '/api/admin',
         })
-        .then((response) => {
-            console.log(response);
-            this.setState({
-                feedbackArray: response.data.rows,
-            }) 
-        })
-        .catch((error) => {
-            console.log('error with GET', error);
-        });
+            .then((response) => {
+                console.log(response);
+                this.setState({
+                    feedbackArray: response.data.rows,
+                })
+            })
+            .catch((error) => {
+                console.log('error with GET', error);
+            });
     }
 
-    deleteFeedback = () => {
+    deleteFeedback = (entryID) => {
         console.log('init deleteFeedback');
+        axios({
+            method: 'DELETE',
+            url: `/api/admin/${entryID}`
+        })
+            .then((response) => {
+                console.log(response);
+                // update DOM with remaining data from database
+                this.getFeedback();
+            })
+            .catch((error) => {
+                console.log('error with DELETE', error);
+            });
     }
 
     render() {
