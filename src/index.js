@@ -16,19 +16,17 @@ const formReducer = ( state = {}, action) => {
             [action.property]: action.payload,
         }
     } else if (action.type === "SUBMIT_FEEDBACK") {
-        postRequest(state);
+        postFeedback(state);
     }
     return state;
 }
 //end formReducers
 
-//adminReducer
 
-//end adminReducer
 //----END REDUCERS----//
 
-//---FUNCTIONS---//
-const postRequest = (newFeedback) => {
+//---SERVER REQUESTS---//
+const postFeedback = (newFeedback) => {
     axios({
         method: 'POST',
         url: '/api/submission',
@@ -41,12 +39,12 @@ const postRequest = (newFeedback) => {
         console.log('error with POST', error);
     });
 }
-//----END FUNCTIONS----//
+
+//----END SERVER REQUESTS----//
 
 const storeInstance = createStore(
     combineReducers({
         formReducer,
-        // adminReducer,
     }),
     applyMiddleware(logger),
 );
