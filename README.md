@@ -41,26 +41,26 @@ npm run client
 [ ] feeling: form validation
 [x] feeling: connect to redux store
 [x] feeling: next button functionality
-[ ] understanding: prompt
-[ ] understanding: input
-[ ] understanding: form validation
-[ ] understanding: connect to redux store
-[ ] understanding: next button functionality
+[x] understanding: prompt
+[x] understanding: input
+[x] understanding: form validation
+[x] understanding: connect to redux store
+[x] understanding: next button functionality
 [ ] understanding: previous button functionality
-[ ] support: prompt
-[ ] support: input
+[x] support: prompt
+[x] support: input
 [ ] support: form validation
-[ ] support: connect to redux store
-[ ] support: next button functionality
+[x] support: connect to redux store
+[x] support: next button functionality
 [ ] support: previous button functionality
-[ ] comments: prompt
-[ ] comments: input
-[ ] comments: form validation
-[ ] comments: connect to redux store
-[ ] comments: next button functionality
+[x] comments: prompt
+[x] comments: input
+[x] comments: form validation
+[x] comments: connect to redux store
+[x] comments: next button functionality
 [ ] comments: previous button functionality
 [ ] submit view: submit button runs POST to database
-[ ] submit success toast or page
+[x] success page
 [ ] admin: html setup
 [ ] set up adminReducer
 [ ] admin: GET function

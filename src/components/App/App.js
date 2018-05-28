@@ -9,6 +9,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Admin from '../Admin/Admin';
+import ThankYou from '../ThankYou/ThankYou';
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
             <li><Link to="/understanding">Understanding</Link></li>
             <li><Link to="/support">Support</Link></li>
             <li><Link to="/comments">Comments</Link></li>
+            <li><Link to="/thank_you">Thank you</Link></li>
             <li><Link to="/admin">Admin</Link></li>
           </ul>
         </div>
@@ -35,6 +37,7 @@ class App extends Component {
         <Route exact path="/understanding" component={Understanding} />
         <Route exact path="/support" component={Support} />
         <Route exact path="/comments" component={Comments} />
+        <Route exact path="/thank_you" component={ThankYou} />
         <Route exact path="/admin" component={Admin} />
       </div>
       </Router>

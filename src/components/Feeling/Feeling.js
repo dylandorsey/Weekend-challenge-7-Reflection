@@ -5,7 +5,7 @@ const mapReduxStateToProps = (reduxState) => (
     { reduxState }
 );
 
-const emptyInput = 'Type 1 through 5';
+const emptyInput = '';
 
 
 class Feeling extends Component {
@@ -16,15 +16,16 @@ class Feeling extends Component {
         }
     }
 
+    // load user input from store
     componentDidMount = () => {
         this.setState({
-            formInput: this.props.reduxState.feelingReducer.value,
+            formInput: this.props.reduxState.formReducer.feeling,
         })
     }
 
     // send state to store
     dispatchInput = () => {
-        const action = {type: 'STORE_FEELING', payload: this.state.formInput};
+        const action = {type: 'STORE_INPUT', property: 'feeling', payload: this.state.formInput};
         this.props.dispatch(action);
     }
     
