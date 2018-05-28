@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 
 const mapReduxStateToProps = (reduxState) => (
     { reduxState }
@@ -30,7 +32,7 @@ class Comments extends Component {
 
     // initiate submit feedback to server via submissionReducer
     dispatchSubmitFeedback = () => {
-        const action = { type: 'SUBMIT_FEEDBACK'};
+        const action = { type: 'SUBMIT_FEEDBACK' };
         this.props.dispatch(action);
     }
 
@@ -63,17 +65,19 @@ class Comments extends Component {
                 <div className="progressIndicator">
                     <div className="progressBar">
                     </div>
-                    <div>
-                        <h3>4 of 4</h3>
-                    </div>
+                    <Paper elevation={2}>
+                        <Typography variant="subheading">Page 4 of 4</Typography>
+                    </Paper>
                 </div>
-                <h2>Any comments you want to leave?</h2>
-                <form onSubmit={this.submitHandler}>
-                    <input onChange={this.handleChangeFor('formInput')} type="text" placeholder={this.state.formInput} />
-                </form>
-                <br/>
-                <button onClick={this.previousHandler} >Previous</button>
-                <button onClick={this.submitHandler}>Submit Feedback</button>
+                <Paper elevation={3}>
+                    <Typography variant="title">Any comments you want to leave?</Typography>
+                    <form onSubmit={this.submitHandler}>
+                        <input onChange={this.handleChangeFor('formInput')} type="text" placeholder={this.state.formInput} />
+                    </form>
+                    <br />
+                    <button onClick={this.previousHandler} >Previous</button>
+                    <button onClick={this.submitHandler}>Submit Feedback</button>
+                </Paper>
             </div>
         );
     }

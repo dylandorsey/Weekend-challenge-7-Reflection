@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+
+
 
 const mapReduxStateToProps = (reduxState) => (
     { reduxState }
@@ -49,15 +53,17 @@ class Feeling extends Component {
                 <div className="progressIndicator">
                     <div className="progressBar">
                     </div>
-                    <div>
-                        <h3>1 of 4</h3>
-                    </div>
+                    <Paper elevation={2}>
+                    <Typography variant="subheading">Page 1 of 4</Typography>
+                    </Paper>
                 </div>
-                <h2>How are you feeling today?</h2>
+                <Paper elevation={3}>
+                <Typography variant="title">How are you feeling today?</Typography>
                 <form onSubmit={this.submitHandler}>
                     <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
                 </form>
                 <button onClick={this.submitHandler}>Next</button>
+                </Paper>
             </div>
         );
     }

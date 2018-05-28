@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+
 
 const mapReduxStateToProps = (reduxState) => (
     { reduxState }
@@ -25,14 +28,14 @@ class Support extends Component {
 
     // send state to store
     dispatchInput = () => {
-        const action = {type: 'STORE_INPUT', property: 'support', payload: this.state.formInput};
+        const action = { type: 'STORE_INPUT', property: 'support', payload: this.state.formInput };
         this.props.dispatch(action);
     }
-    
+
     // assign input value to state property
     handleChangeFor = propertyName => event => {
         this.setState({
-            [propertyName] : event.target.value
+            [propertyName]: event.target.value
         });
     }
 
@@ -55,16 +58,18 @@ class Support extends Component {
                 <div className="progressIndicator">
                     <div className="progressBar">
                     </div>
-                    <div>
-                        <h3>3 of 4</h3>
-                    </div>
+                    <Paper elevation={2}>
+                        <Typography variant="subheading">Page 3 of 4</Typography>
+                    </Paper>
                 </div>
-                <h2>How well are you being supported?</h2>
-                <form onSubmit={this.submitHandler}>
-                    <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
-                </form>
-                <button onClick={this.previousHandler} >Previous</button>
-                <button onClick={this.submitHandler}>Next</button>
+                <Paper elevation={3}>
+                    <Typography variant="title">How well are you being supported?</Typography>
+                    <form onSubmit={this.submitHandler}>
+                        <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
+                    </form>
+                    <button onClick={this.previousHandler} >Previous</button>
+                    <button onClick={this.submitHandler}>Next</button>
+                </Paper>
             </div>
         );
     }
