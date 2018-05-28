@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import FeedbackItem from '../FeedbackItem/FeedbackItem';
 import axios from 'axios';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class Admin extends Component {
     constructor(props) {
@@ -30,6 +32,23 @@ class Admin extends Component {
                 console.log('error with GET', error);
             });
     }
+
+    confirmAction = (entryID) => {
+        confirmAlert({
+            title: 'Confirm delete',
+            message: 'Are you sure you want to delete?',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => this.deleteFeedback(entryID)
+                },
+                {
+                    label: 'No',
+                    onClick: () => alert('aborted')
+                }
+            ]
+        })
+    };
 
     deleteFeedback = (entryID) => {
         console.log('init deleteFeedback', entryID);
@@ -65,7 +84,7 @@ class Admin extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.feedbackArray.map(item => <FeedbackItem key={item.id} item={item} delete={this.deleteFeedback} />)}
+                        {this.state.feedbackArray.map(item => <FeedbackItem key={item.id} item={item} delete={this.confirmAction} />)}
                     </tbody>
                 </table>
             </div>

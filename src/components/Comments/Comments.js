@@ -54,6 +54,7 @@ class Comments extends Component {
         this.dispatchInput();
         // initiate POST to database
         this.dispatchSubmitFeedback();
+        this.props.history.push('/thank_you')
     }
 
     render() {

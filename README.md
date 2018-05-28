@@ -1,5 +1,18 @@
 # Redux Feedback Loop
 
+<!-- Project description in my own words -->
+
+This project is to create a full-stack application with React, Express, Postgres, and SQL technologies.
+
+As a minimum product, the application will collect four pieces of user input. Each input will be collected from a separate view. Upon collecting the last piece of input, all input will be stored on a database, and the user will be routed to a view that confirms that the input was successfully submitted.
+
+The application will also display in a sixth view, and admin view, all the collected data (now stored in a database). This database view will allow a user to delete entries individually.
+
+As a stretch-goal product, the application will: feature styling beyond browser-default styling, feature on the sixth (admin) view the ability to flag a data entry for further review, and be deployed via Heroku.
+
+<!-- End Project description in my own words -->
+
+
 > **PLEASE COMMENT YOUR CODE.** Do not clone this repository. 
 
 [x] Instead, download the zip, extract the contents, `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
@@ -46,26 +59,26 @@ npm run client
 [x] understanding: form validation
 [x] understanding: connect to redux store
 [x] understanding: next button functionality
-[ ] understanding: previous button functionality
+[x] understanding: previous button functionality
 [x] support: prompt
 [x] support: input
 [ ] support: form validation
 [x] support: connect to redux store
 [x] support: next button functionality
-[ ] support: previous button functionality
+[x] support: previous button functionality
 [x] comments: prompt
 [x] comments: input
 [x] comments: form validation
 [x] comments: connect to redux store
 [x] comments: next button functionality
-[ ] comments: previous button functionality
+[x] comments: previous button functionality
 [x] submit view: submit button runs POST to database
 [x] success page
 [x] admin: html setup
 [x] set up adminReducer
 [x] admin: GET function
-[ ] admin: DELETE function
-[ ] admin: DELETE confirmation
+[x] admin: DELETE function
+[x] admin: DELETE confirmation
 [ ] progress bar
 
 Create a multi-part form that allows users to leave feedback for today. 
@@ -80,9 +93,10 @@ The parts:
 - Any comments you want to leave?
 ![comments](wireframes/page-four.png)
 
-While there is no nav bar, each part of the form should be at its own route. Clicking next should move the user to the appropriate step in the process.
+[x] While there is no nav bar, each part of the form should be at its own route. Clicking next should move the user to the appropriate step in the process.
 
- When the form is complete, save the submission in the database. The user should see a submission success page.
+ [x] When the form is complete, save the submission in the database. 
+ [x] The user should see a submission success page.
  ![understanding](wireframes/page-five.png)
 
 ### DISPLAY FEEDBACK
@@ -93,10 +107,10 @@ Display all of the existing feedback at the route `/admin`. The most recently ad
 
 ## STRETCH GOALS
 
-- Update this README.md to describe the project in your own words
-- Improve the styling of the app using Material-UI theme, cards, snackbars, buttons, nav bar, and icons, and anything else you'd like.
-- Add the ability to flag an existing feedback entry for further review on the /admin view
-- Deploy your project to Heroku -- you'll need to read the special instructions for building and deploying with these apps! 
+[x] - Update this README.md to describe the project in your own words
+[ ] - Improve the styling of the app using Material-UI theme, cards, snackbars, buttons, nav bar, and icons, and anything else you'd like.
+[ ] - Add the ability to flag an existing feedback entry for further review on the /admin view
+[ ] - Deploy your project to Heroku -- you'll need to read the special instructions for building and deploying with these apps! 
 
 
 > NOTE: These stretch goals are intended to be completed in order.

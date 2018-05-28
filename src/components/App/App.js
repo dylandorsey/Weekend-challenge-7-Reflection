@@ -21,18 +21,6 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
-        <br />
-        <div className="nav">
-          <ul>
-            <li><Link to="/">Feeling</Link></li>
-            <li><Link to="/understanding">Understanding</Link></li>
-            <li><Link to="/support">Support</Link></li>
-            <li><Link to="/comments">Comments</Link></li>
-            <li><Link to="/thank_you">Thank you</Link></li>
-            <li><Link to="/admin">Admin</Link></li>
-          </ul>
-        </div>
-        <br />
         <Route exact path="/" component={Feeling} />
         <Route exact path="/understanding" component={Understanding} />
         <Route exact path="/support" component={Support} />
