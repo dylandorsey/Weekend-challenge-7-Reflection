@@ -6,14 +6,6 @@ const mapReduxStateToProps = (reduxState) => (
 );
 
 const emptyInput = '';
-const emptyObject = {};
-
-// const submitHandler = new Promise(function resolve() {
-//     console.log('finished');
-// }, function reject() {
-//     console.log('failed');
-// }
-// );
 
 class Comments extends Component {
     constructor(props) {

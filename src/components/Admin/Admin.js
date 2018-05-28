@@ -32,7 +32,7 @@ class Admin extends Component {
     }
 
     deleteFeedback = (entryID) => {
-        console.log('init deleteFeedback');
+        console.log('init deleteFeedback', entryID);
         axios({
             method: 'DELETE',
             url: `/api/admin/${entryID}`
@@ -65,7 +65,7 @@ class Admin extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.feedbackArray.map(item => <FeedbackItem key={item._id} item={item} delete={this.deleteFeedback} />)}
+                        {this.state.feedbackArray.map(item => <FeedbackItem key={item.id} item={item} delete={this.deleteFeedback} />)}
                     </tbody>
                 </table>
             </div>

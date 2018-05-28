@@ -21,7 +21,8 @@ router.get('/', (req, res) => {
 
 // DELETE feedback
 router.delete('/:id', (req, res) => {
-    const feedback_id = req.params;
+    console.log(req.params);
+    const feedback_id = req.params.id;
     console.log(feedback_id);
     pool.query(`DELETE FROM "feedback"
                         WHERE "id" = ($1);`, [feedback_id])
