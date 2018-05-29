@@ -47,7 +47,7 @@ class App extends Component {
       <div>
         <MuiThemeProvider theme={myTheme}>
           <div className="App-header">
-            <Typography variant="headline">Feedback!</Typography>
+            <Typography variant="headline">Feedback</Typography>
             <Typography variant="subheading">Give it on the daily!</Typography>
           </div>
           <Router>

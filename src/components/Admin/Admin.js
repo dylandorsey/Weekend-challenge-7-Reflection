@@ -3,6 +3,12 @@ import FeedbackItem from '../FeedbackItem/FeedbackItem';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 class Admin extends Component {
     constructor(props) {
@@ -70,23 +76,23 @@ class Admin extends Component {
         return (
             <div >
                 <h2>Admin</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Feeling</th>
-                            <th>Understanding</th>
-                            <th>Support</th>
-                            <th>Comments</th>
-                            <th>Flagged</th>
-                            <th>Date</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell numeric>ID</TableCell>
+                            <TableCell numeric>Feeling</TableCell>
+                            <TableCell numeric>Understanding</TableCell>
+                            <TableCell numeric>Support</TableCell>
+                            <TableCell >Comments</TableCell>
+                            <TableCell>Flagged</TableCell>
+                            <TableCell>Date</TableCell>
+                            <TableCell>Action</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
                         {this.state.feedbackArray.map(item => <FeedbackItem key={item.id} item={item} delete={this.confirmAction} />)}
-                    </tbody>
-                </table>
+                    </TableBody>
+                </Table>
             </div>
         );
     }
