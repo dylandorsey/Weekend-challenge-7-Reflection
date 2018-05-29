@@ -32,7 +32,6 @@ const myTheme = createMuiTheme({
 
 const styles = {
   jumbotron: {
-    float: 'center',
     backgroundColor: teal,
 
   },
@@ -47,7 +46,7 @@ class App extends Component {
     return (
       <div>
         <MuiThemeProvider theme={myTheme}>
-          <div style={styles.jumbotron}>
+          <div className="App-header">
             <Typography variant="headline">Feedback!</Typography>
             <Typography variant="subheading">Give it on the daily!</Typography>
           </div>

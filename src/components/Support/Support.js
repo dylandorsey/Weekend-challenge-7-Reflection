@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import ButtonNavForward from '../ButtonNavForward/ButtonNavForward';
+import ButtonNavBackward from '../ButtonNavBackward/ButtonNavBackward';
 
 
 const mapReduxStateToProps = (reduxState) => (
@@ -67,8 +69,11 @@ class Support extends Component {
                     <form onSubmit={this.submitHandler}>
                         <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
                     </form>
-                    <button onClick={this.previousHandler} >Previous</button>
-                    <button onClick={this.submitHandler}>Next</button>
+                    <br/>
+                    <div className="navButtons">
+                    <ButtonNavBackward onClick={this.previousHandler} />
+                    <ButtonNavForward onClick={this.submitHandler} />
+                    </div>
                 </Paper>
             </div>
         );

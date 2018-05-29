@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import ButtonNavBackward from '../ButtonNavBackward/ButtonNavBackward';
+import ButtonNavForward from '../ButtonNavForward/ButtonNavForward';
 
 const mapReduxStateToProps = (reduxState) => (
     { reduxState }
@@ -67,8 +69,10 @@ class Understanding extends Component {
                         <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
                     </form>
                     <br />
-                    <button onClick={this.previousHandler} >Previous</button>
-                    <button onClick={this.submitHandler}>Next</button>
+                    <div className="navButtons">
+                        <ButtonNavBackward onClick={this.previousHandler} />
+                        <ButtonNavForward onClick={this.submitHandler} />
+                    </div>
                 </Paper>
             </div>
         );

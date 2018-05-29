@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import FeedbackTextArea from '../FeebackTextArea/FeedbackTextArea';
+import ButtonNavBackward from '../ButtonNavBackward/ButtonNavBackward';
+import ButtonSubmitFeedback from '../ButtonSubmitFeedback/ButtonSubmitFeedback';
 
 const mapReduxStateToProps = (reduxState) => (
     { reduxState }
@@ -72,11 +75,13 @@ class Comments extends Component {
                 <Paper elevation={3}>
                     <Typography variant="title">Any comments you want to leave?</Typography>
                     <form onSubmit={this.submitHandler}>
-                        <input onChange={this.handleChangeFor('formInput')} type="text" placeholder={this.state.formInput} />
+                        <FeedbackTextArea onChange={this.handleChangeFor('formInput')} type="text" placeholder={this.state.formInput} />
                     </form>
                     <br />
-                    <button onClick={this.previousHandler} >Previous</button>
-                    <button onClick={this.submitHandler}>Submit Feedback</button>
+                    <div className="navButtons">
+                        <ButtonNavBackward onClick={this.previousHandler} />
+                        <ButtonSubmitFeedback onClick={this.submitHandler} />
+                    </div>
                 </Paper>
             </div>
         );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
+import ButtonDelete from '../ButtonDelete/ButtonDelete';
 
 class OrderItem extends Component {
 
@@ -15,7 +16,7 @@ class OrderItem extends Component {
         <td>{this.props.item.flagged}</td>
         <td><Moment format="YYYY-MM-DD">{this.props.item.date}</Moment></td>
 
-        <td><button onClick={() => {this.props.delete(this.props.item.id)}}>Delete</button></td>
+        <td><ButtonDelete onClick={() => {this.props.delete(this.props.item.id)}} /></td>
       </tr>
     )
   }

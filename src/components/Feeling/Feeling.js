@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import ButtonNavForward from '../ButtonNavForward/ButtonNavForward';
 
 
 
@@ -29,14 +30,14 @@ class Feeling extends Component {
 
     // send state to store
     dispatchInput = () => {
-        const action = {type: 'STORE_INPUT', property: 'feeling', payload: this.state.formInput};
+        const action = { type: 'STORE_INPUT', property: 'feeling', payload: this.state.formInput };
         this.props.dispatch(action);
     }
-    
+
     // assign input value to state property
     handleChangeFor = propertyName => event => {
         this.setState({
-            [propertyName] : event.target.value
+            [propertyName]: event.target.value
         });
     }
 
@@ -54,15 +55,18 @@ class Feeling extends Component {
                     <div className="progressBar">
                     </div>
                     <Paper elevation={2}>
-                    <Typography variant="subheading">Page 1 of 4</Typography>
+                        <Typography variant="subheading">Page 1 of 4</Typography>
                     </Paper>
                 </div>
                 <Paper elevation={3}>
-                <Typography variant="title">How are you feeling today?</Typography>
-                <form onSubmit={this.submitHandler}>
-                    <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
-                </form>
-                <button onClick={this.submitHandler}>Next</button>
+                    <Typography variant="title">How are you feeling today?</Typography>
+                    <form onSubmit={this.submitHandler}>
+                        <input onChange={this.handleChangeFor('formInput')} type="number" placeholder={this.state.formInput} />
+                    </form>
+                    <br />
+                    <div className="navButtons">
+                        <ButtonNavForward onClick={this.submitHandler} />
+                    </div>
                 </Paper>
             </div>
         );
